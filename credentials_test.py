@@ -86,6 +86,14 @@ class TestCredentials(unittest.TestCase):
         
         self.assertEqual(Credentials.display_credentials(),Credentials.credentials_list)
 
+    def test_copy_email(self):
+
+        self.new_Credentials.save_Credentials()
+        
+        Credentials.copy_email("Libb19")
+
+        self.assertEqual(self.new_Credentials.email,pyperclip.paste())
+
 if __name__ == '__main__':
     unittest.main()
 

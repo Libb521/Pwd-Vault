@@ -50,7 +50,7 @@ class TestCredentials(unittest.TestCase):
 
     def test_delete_credentials(self):
         '''
-        This test enables contacts be deleted from our credential list
+        This test enables credentials be deleted from our credential list
         '''
         self.new_credentials.save_credentials()
         test_save_credentials = Credentials("Test","user","Libb19","eotieno39@yahoo.com")

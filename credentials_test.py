@@ -12,7 +12,7 @@ class TestCredentials(unittest.TestCase):
         '''
         This is to run before each test case.
         '''
-        self.new_credentials = Credentials("Libby","instagram","Libby19","eotieno39@yahoo.com")
+        self.new_credentials = Credentials("Libby","Instagram","Libby19","eotieno39@yahoo.com")
 
     def test_init(self):
         '''
@@ -20,11 +20,13 @@ class TestCredentials(unittest.TestCase):
         '''
 
         self.assertEqual(self.new_credentials.name,"Libby")
-        self.assertEqual(self.new_credentials.credentials,"instagram")
+        self.assertEqual(self.new_credentials.credential,"Instagram")
         self.assertEqual(self.new_credentials.password,"Libby19")
         self.assertEqual(self.new_credentials.email,"eotieno39@yahoo.com")
 
+
 if __name__ == '__main__':
     unittest.main()
+
 
 

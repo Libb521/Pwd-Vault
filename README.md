@@ -18,6 +18,7 @@ This is what the application allows the user to do.
 * Python3.6
 * Pyperclip
 * pip 
+* Terminal
 
 ## Set-Up Instructions
 * Gitclone this repository https://github.com/Libb521/Pwd-Vault on your terminal

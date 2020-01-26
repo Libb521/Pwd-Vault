@@ -32,5 +32,14 @@ class Credentials:
             if credentials.password == password:
                 return credentials
 
+    @classmethod
+    def credentials_exist(cls,password):
+     
+        for credentials in cls.credentials_list:
+            if credentials.password == password:
+                    return True
+
+        return False
+
 
     

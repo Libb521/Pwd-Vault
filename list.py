@@ -1,39 +1,44 @@
 #!/usr/bin/env python3.6
+import pyperclip
 from credentials import Credentials
 
-def create_credential(name1,name2,phone,email):
+def create_user(name1,name2,phone,email):
     '''
-    This is to create a new credential
+    This is to create a new user
     '''
-    new_cridential = Credential(name1,name2,phone,email)
-    return new_credential 
+    new_user = User(name1,name2,phone,email)
+    return new_user 
 
-def save_credentials(credential):
+def save_user(user):
     '''
-    This is to save the credential
+    This is to save the user
     '''
-    credential.save_credential()
+    user.save_user()
 
-def del_credential(credential):
+def del_user(user):
     '''
-    This is to delete a credential
+    This is to delete a user
     '''
     credential.delete_credential()
 
-def find_credential(password):
+def find_user(password):
     '''
-    This is to help search for and find a credential
+    This is to help search for and find a user
     '''
-    return Credentials.find_by_password(password)
+    return User.find_by_password(password)
 
-def find_existing_credentials(password):
+def verify_user(password):
     '''
     This is to help in checking if a credential has been logged using the password
     '''
-    return Credentials.credentials_exist(password)
+    checking_user = Credential.check_user(name1,password)
+    return checking_user
 
-def display_credentials():
+def generate_password():
     '''
     This helps return all saved contacts
     '''
-    return Credentials.display_credentials()
+    gen_pass = Credential.generate_password()
+    return gen_pass
+
+def create_credentials(name,credential,password,email)

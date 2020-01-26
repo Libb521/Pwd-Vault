@@ -41,4 +41,17 @@ def generate_password():
     gen_pass = Credential.generate_password()
     return gen_pass
 
-def create_credentials(name,credential,password,email)
+def create_credentials(name,credential,password,email):
+    '''
+    This is to create new user credentials
+    '''
+    new_credentials = Credentials(name,credential,password,email)
+    return = new_credentials
+
+def save_credential(credential):
+    '''
+    This helps to save newly created credentials
+    '''
+    credential.save_credentials(credential)
+
+

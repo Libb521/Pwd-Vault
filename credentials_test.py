@@ -88,7 +88,7 @@ class TestCredentials(unittest.TestCase):
 
     def test_copy_email(self):
 
-        self.new_Credentials.save_Credentials()
+        self.new_credentials.save_credential()
         
         Credentials.copy_email("Libb19")
 

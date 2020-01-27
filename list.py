@@ -1,7 +1,7 @@
 #!/usr/bin/env python3.6
 import pyperclip
 from credentials import Credentials
-# from user import User
+from user import User
 
 def create_user(name1,name2,password,email):
     '''
@@ -108,7 +108,7 @@ def main():
             password = input('Enter your password - ').strip()
             email = input('Your email address - ').strip()
 
-            save_users(create_users(name1,name2,password,email))
+            save_user(create_user(name1,name2,password,email))
             print('\n')
             print(f"New account created for: {name1} {name2} created")
             print('\n')

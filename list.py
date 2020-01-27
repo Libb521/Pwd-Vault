@@ -125,8 +125,8 @@ def main():
                 print(' ')
                 while True:
                     print("-"*60)
-                    Print('Explore more: \n cr-Create a credentials \n dis-Display Credentials \n cp-Copy Password \n go-Exit')
-                    short_code = input('Explore: ').lowercase().strip()
+                    Print('Explore more: \n cr-Create a credential \n dis-Display Credentials \n cp-Copy Password \n go-Exit')
+                    short_code = input('Explore: ').lower().strip()
                     print("-"*60)
                     if short_code == 'go':
                         print(' ')
@@ -137,9 +137,13 @@ def main():
                         print('Enter your credentials:')
                         site_name = input('Site name - ').strip()
                         account_name = input('Your account name - ').strip()
-                        while True:
-                            
-
+                        email_address = input('Your email address - ').strip()
+                        password = input('Your Password here - ').strips()
+                        save_credential(create_credential(user_name,site_name,account_name,password))
+                        print(' ')
+                        print(f'Credential created: Site Name: {site_name} - Account Name: {account_name} - Password: {password}')
+                        print(' ')
+                        
 
 
 

@@ -2,11 +2,11 @@
 import pyperclip
 from credentials import Credentials
 
-def create_user(name1,name2,phone,email):
+def create_user(name1,name2,password,email):
     '''
     This is to create a new user
     '''
-    new_user = User(name1,name2,phone,email)
+    new_user = User(name1,name2,password,email)
     return new_user 
 
 def save_user(user):
@@ -86,7 +86,7 @@ def check_existing_credentials(password):
 
 def main():
     print(' ')
-    print("Hi there, Welcome to the Password vault")
+    print("Hi there, Welcome to the Password vault, What do we call you?")
     user_name = input()
 
     while True:
@@ -107,7 +107,7 @@ def main():
             password = input('Enter your password - ').strip()
             email = input('Your email address - ').strip()
 
-            save_user(create_user(name1,name2,password,email))
+            save_users(create_users(name1,name2,password,email))
             print('\n')
             print(f"New account created for: {name1} {name2} created")
             print('\n')
@@ -161,9 +161,17 @@ def main():
                         copy_credential(chosen_site)
                         print(' ')
                     else:
-                        print(' ')
                         print('Kindly check your details and try again. Thank you')
-                
+                else:
+                    print(' ')
+                    print('Kindly check your details and try again. Thank you')
+            else:
+                print("-"*60)
+                print(' ')
+                print('Wrong input detected. Re-group and Try again.')
+
+if __name__ == '__main__':
+	main()
                         
 
 

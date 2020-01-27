@@ -143,7 +143,27 @@ def main():
                         print(' ')
                         print(f'Credential created: Site Name: {site_name} - Account Name: {account_name} - Password: {password}')
                         print(' ')
+                    elif short_code == 'dis':
+                        print(' ')
+                        if display_credentials(user_name):
+                            Print('All vaulted credentials can be found here')
+                            print(' ')
+                            for credential in display_credentials(user_name):
+                                print(f'Site Name: {credential.site_name} - Account Name: {credential.account_name} - Password: {credential.password}')  
+                            print(' ')
+                        else:
+                            print(' ')
+                            print("No credentials found for you unfortunately")
+                            print(' ')
+                    elif short_code == 'cp':
+                        print(' ')
+                        chosen_site = input('Enter the site You would wish to visit')
+                        copy_credential(chosen_site)
+                        print(' ')
+                    else:
+                        print(' ')
+                        print('Kindly check your details and try again. Thank you')
+                
                         
-
 
 

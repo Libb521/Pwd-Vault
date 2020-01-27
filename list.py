@@ -1,6 +1,7 @@
 #!/usr/bin/env python3.6
 import pyperclip
 from credentials import Credentials
+# from user import User
 
 def create_user(name1,name2,password,email):
     '''
@@ -118,7 +119,7 @@ def main():
             print('Welcome back, enter your account details to go on')
             user_name = input('Your first name - ').strip()
             password = input('Enter your password - ').strip()
-            user_exists = verify_user(name1,password)
+            user_exists = verify_user(user_name,password)
             if user_exists == user_name:
                 print(" ")
                 print(f'Welcome back {user_name}. choose an option to continue')

@@ -93,31 +93,53 @@ def main():
         print(f'Hi {user_name}, Kindly select what you would like to do')
         print('\n')
         print("-"*60)
-	    # print("Use these codes to navigate : \n A/C-Create an Account \n Log-Log In \n Leave-Exit the list')
-        print("Use these codes to navigate : cu - create a user a/c, du - display users, fu -find a user, cc - create credential, dc - display credential, fc - find credential, ex -exit the  list ")
-		
+        print("Use these codes to navigate: \n ac-Create an Account \n log-Log In \n go-Exit")		
         short_code = input('Enter a choice: ').lower().strip()
-       
-        if short_code == 'cu':
-            print("welcome")
-            print("-"*10)
-            
-            print("First name ...")
-            name1 = input()
+        if short_code == 'go':
+            break
+        
+        elif short_code == 'ac':
+            print("-"*60)
+            print(' ')
+            print('Create a new account:')
+            name1 = input('Your first name - ').strip()
+            name2 = input('Your last name - ').strip()
+            password = input('Enter your password - ').strip()
+            email = input('Your email address - ').strip()
 
-            print("name2...")
-            name2 = input()
-
-            print("Your password...")
-            password = input()
-
-            print("Email address...")
-            email = input()
-
-            save_users(create_user(name1,name2,password,email))
+            save_user(create_user(name1,name2,password,email))
             print('\n')
-            print(f"welcome {name1} {name2} created")
+            print(f"New account created for: {name1} {name2} created")
             print('\n')
+
+        elif short_code == 'log':
+            print("-"*60)
+            print(' ')
+            print('Welcome back, enter your account details to go on')
+            user_name = input('Your first name - ').strip()
+            password = input('Enter your password - ').strip()
+            user_exists = verify_user(name1,password)
+            if user_exists == user_name:
+                print(" ")
+                print(f'Welcome back {user_name}. choose an option to continue')
+                print(' ')
+                while True:
+                    print("-"*60)
+                    Print('Explore more: \n cr-Create a credentials \n dis-Display Credentials \n cp-Copy Password \n go-Exit')
+                    short_code = input('Explore: ').lowercase().strip()
+                    print("-"*60)
+                    if short_code == 'go':
+                        print(' ')
+                        print(f'Have a nice day {user_name}')
+                        break
+                    elif short_code == 'cr':
+                        print(' ')
+                        print('Enter your credentials:')
+                        site_name = input('Site name - ').strip()
+                        account_name = input('Your account name - ').strip()
+                        while True:
+                            
+
 
 
 

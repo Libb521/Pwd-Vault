@@ -123,8 +123,6 @@ def main():
             print('Welcome back, enter your account details to go on')
             name1 = input('Your first name - ').strip()
             password = input('Enter your password - ').strip()
-            # checking_user = Credentials.verify_user(name1,password)
-            # if checking_user == checking_user:
             print(" ")
             print(f'Welcome back {name1}. choose an option to continue')
             print(' ')

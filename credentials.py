@@ -24,6 +24,17 @@ class Credentials:
 
         Credentials.credentials_list.remove(self)
 
+    def verify_credentials(self):
+
+        Credentials.credentials_list.check(self)
+
+    def display_credentials(self):
+        Credentials.credentials_list.show(self)
+
+    def copy_credentials(self):
+        Credentials.credentials_list.copy()
+
+
     @classmethod
     def find_by_password(cls,password):
       

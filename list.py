@@ -32,7 +32,7 @@ def verify_user(password):
     '''
     This is to help in checking if a credential has been logged using the password
     '''
-    checking_user = Credential.check_user(name1,password)
+    checking_user = Credential.verify_user(name1,password)
     return checking_user
 
 def display_users():
@@ -73,6 +73,10 @@ def del_credentials(Credentials):
     '''
     Credentials.delete_credentials()
 
+def copy_credentials(chosen_site):
+
+    return Credentials.copy_credentials(chosen_site)
+
 def find_credentials(password):
     '''
     helps to find credentials using password
@@ -110,66 +114,68 @@ def main():
 
             save_user(create_user(name1,name2,password,email))
             print('\n')
-            print(f"New account created for: {name1} {name2} created")
+            print(f"Congratulations, you have successfully created your new account {name1} {name2}.")
             print('\n')
 
         elif short_code == 'log':
             print("-"*60)
             print(' ')
             print('Welcome back, enter your account details to go on')
-            user_name = input('Your first name - ').strip()
+            name1 = input('Your first name - ').strip()
             password = input('Enter your password - ').strip()
-            user_exists = verify_user(user_name,password)
-            if user_exists == user_name:
-                print(" ")
-                print(f'Welcome back {user_name}. choose an option to continue')
-                print(' ')
-                while True:
-                    print("-"*60)
-                    Print('Explore more: \n cr-Create a credential \n dis-Display Credentials \n cp-Copy Password \n go-Exit')
-                    short_code = input('Explore: ').lower().strip()
-                    print("-"*60)
-                    if short_code == 'go':
-                        print(' ')
-                        print(f'Have a nice day {user_name}')
-                        break
-                    elif short_code == 'cr':
-                        print(' ')
-                        print('Enter your credentials:')
-                        site_name = input('Site name - ').strip()
-                        account_name = input('Your account name - ').strip()
-                        email_address = input('Your email address - ').strip()
-                        password = input('Your Password here - ').strips()
-                        save_credential(create_credential(user_name,site_name,account_name,password))
-                        print(' ')
-                        print(f'Credential created: Site Name: {site_name} - Account Name: {account_name} - Password: {password}')
-                        print(' ')
-                    elif short_code == 'dis':
-                        print(' ')
-                        if display_credentials(user_name):
-                            Print('All vaulted credentials can be found here')
-                            print(' ')
-                            for credential in display_credentials(user_name):
-                                print(f'Site Name: {credential.site_name} - Account Name: {credential.account_name} - Password: {credential.password}')  
-                            print(' ')
-                        else:
-                            print(' ')
-                            print("No credentials found for you unfortunately")
-                            print(' ')
-                    elif short_code == 'cp':
-                        print(' ')
-                        chosen_site = input('Enter the site You would wish to visit')
-                        copy_credential(chosen_site)
-                        print(' ')
-                    else:
-                        print('Kindly check your details and try again. Thank you')
-                else:
+            # checking_user = Credentials.verify_user(name1,password)
+            # if checking_user == checking_user:
+            print(" ")
+            print(f'Welcome back {name1}. choose an option to continue')
+            print(' ')
+            while True:
+                print("-"*60)
+                print('Explore more: \n cr-Create a credential \n dis-Display Credentials \n cp-Copy Password \n go-Exit')
+                short_code = input('Explore: ').lower().strip()
+                print("-"*60)
+                if short_code == 'go':
                     print(' ')
+                    print(f'Have a nice day {checking_user}')
+                    break
+                elif short_code == 'cr':
+                    print(' ')
+                    print('Enter your credentials:')
+                    name = input('Your username - ').strip()
+                    credential = input('Site name - ').strip()
+                    password = input('Your password - ').strip()
+                    email = input('Your email address - ').strip()
+                    save_credential(create_credentials(name,credential,password,email))
+                    print(' ')
+                    print(f'Credential created for: Site Name: {credential} - User Name: {name} - Password: {password}')
+                    print(' ')
+                elif short_code == 'dis':
+                    print('To display credentials')
+                    print(' ')
+                    name = input('Type name you would like to display: ')
+                    if display_credentials:'name'
+                    print('All vaulted credentials can be found here')
+                    print(' ')
+                    print(' ')
+                    print(f'User Name: {name} - Password: {password}')  
+                    print(' ')
+                    print(' ')
+                    print("No credentials found for you unfortunately")
+                    print(' ')
+                    
+                elif short_code == 'cp':
+                    print(' ')
+                    chosen_site = input('Enter the site You would wish to visit: ')
+                    copy_credentials(chosen_site)
+                    print(f'Password for {chosen_site} successfully copied')
+                else:
                     print('Kindly check your details and try again. Thank you')
             else:
-                print("-"*60)
                 print(' ')
-                print('Wrong input detected. Re-group and Try again.')
+                print('Kindly check your details and try again. Thank you')
+        else:
+            print("-"*60)
+            print(' ')
+            print('Wrong input detected. Re-group and Try again.')
 
 if __name__ == '__main__':
 	main()

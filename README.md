@@ -13,6 +13,16 @@ This is what the application allows the user to do.
 * Copy my credentials to the clipboard
 
 ## BDD
+| Behaviour | Input | Output |
+| :---------------- | :---------------: | ------------------: |
+| Display codes for navigation | **In terminal: $./list.py** | Hi there, Welcome to the Password vault, What do we call you? |
+| Display prompt for creating an account | **Enter: Ac** | Enter your first name, last name, password and email address |
+| Display prompt for login in | **Enter: log** | Enter your account details to log in |
+| Display codes for navigation | **Successful login** | Choose an option: cr - Create Credential, dis - Display Credentials, cp - Copy Credential, go - exit |
+| Display prompt for creating a credential | **Enter: cr** | Enter the site name, credentials, password and email address |
+| Display a list of credentials | **Enter: dis** | Prints a list of saved credentials |
+| Display prompt for which credential to copy | **Enter: cp** | Enter the site name of the credential you wish to copy. |
+| Exit application | **Enter: go** | Exit the current navigation stage |
 
 ## SetUp Requirements
 * Python3.6

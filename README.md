@@ -12,6 +12,9 @@ This is what the application allows the user to do.
 * Generate a password for the user credentials
 * Copy my credentials to the clipboard
 
+## Codebeat badge
+* [![codebeat badge](https://codebeat.co/badges/84783856-44c4-4866-af83-d2ac6006b07f)](https://codebeat.co/projects/github-com-libb521-pwd-vault-master)
+
 ## BDD
 | Behaviour | Input | Output |
 | :---------------- | :---------------: | ------------------: |
